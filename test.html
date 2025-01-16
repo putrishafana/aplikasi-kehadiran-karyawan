@@ -1,0 +1,59 @@
+@startuml
+|Administrator|
+start
+:Masuk ke Halaman List Administrator;
+|Sistem|
+:Menampilkan List Administrator;
+|Administrator|
+:Klik tombol "Tambah Data";
+|Sistem|
+:Menampilkan Form Tambah Data Administrator;
+|Administrator|
+:Mengisi Form Tambah Data Administrator
+lalu klik "Tambah Data";
+|Sistem|
+while (Validasi Data Administrator) is (tidak)
+    :Menampilkan Pesan Kesalahan;
+    |Administrator|
+    :Cek Kembali Data yang Di Masukkan;
+endwhile (ya)
+|Sistem|
+:Data Administrator Berhasil di Tambahkan ke Database;
+:Kembali ke Halaman List Administrator;
+|Administrator|
+:Cari Data Administrator yang ingin di Ubah
+berdasarkan Nama Administrator;
+|Sistem|
+:Menampilkan Data Administrator yang di Cari;
+|Administrator|
+:Klik tombol dengan icon "Pencil";
+|Sistem|
+:Menampilkan Form Edit Data Administrator;
+|Administrator|
+:Melakukan Perubahan Data Administrator yang
+diperlukan lalu klik "Update Data";
+|Sistem|
+while (Validasi Data Administrator) is (tidak)
+    :Menampilkan Pesan Kesalahan;
+    |Administrator|
+    :Cek Kembali Data yang Di Masukkan;
+endwhile (ya)
+|Sistem|
+:Data Administrator Berhasil Update di Database;
+:Kembali ke Halaman List Administrator;
+|Administrator|
+:Cari Data Administrator yang ingin di Hapus
+berdasarkan Nama Administrator;
+|Sistem|
+:Menampilkan Data Administrator yang di Cari;
+|Administrator|
+:Klik tombol dengan icon "Tempat Sampah";
+|Sistem|
+if (Konfirmasi Hapus Data Administrator) then (batal)
+    :Data Administrator Tidak Terhapus;
+else (hapus)
+|Sistem|
+:Data Administrator Berhasil di Hapus dalam Database;
+:Kembali ke Halaman List Administrator;
+stop;
+@enduml
